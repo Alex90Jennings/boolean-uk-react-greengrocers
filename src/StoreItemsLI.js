@@ -6,7 +6,7 @@ function StoreItemsLI(props) {
   return (
     <li>
       <img
-        src={process.env.PUBLIC_URL + `/assets/icons/${id}.svg`}
+        src={process.env.PUBLIC_URL + `./assets/icons/${id}.svg`}
         alt={vegName}
       />
       <button>Add veg to cart</button>
