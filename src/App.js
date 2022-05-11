@@ -1,7 +1,12 @@
 import './styles/reset.css'
 import './styles/index.css'
 
+import Icons from './Icons.js'
+import Header from './Header.js'
+import Main from './Main.js'
+
 import initialStoreItems from './store-items'
+import { useState } from 'react'
 
 /*
 Here's what a store item should look like
@@ -16,46 +21,25 @@ What should a cart item look like? 🤔
 
 console.log(initialStoreItems)
 
-export default function App() {
+function App() {
   // Setup state here...
+  //const [cartState, setCartState] = useState(null)
+  const [storeState, setStoreState] = useState(initialStoreItems)
+  //const [total, setTotal] = useState(0)
+
+  const addVegToCart = () => {
+    //take selected veg
+    //create a new li for store item
+    //update setStoreState
+  }
 
   return (
     <>
-      <header id="store">
-        <h1>Greengrocers</h1>
-        <ul className="item-list store--item-list">
-          {/* Wrtite some code here... */}
-        </ul>
-      </header>
-      <main id="cart">
-        <h2>Your Cart</h2>
-        <div className="cart--item-list-container">
-          <ul className="item-list cart--item-list">
-            {/* Wrtite some code here... */}
-          </ul>
-        </div>
-        <div className="total-section">
-          <div>
-            <h3>Total</h3>
-          </div>
-          <div>
-            <span className="total-number">£0.00</span>
-          </div>
-        </div>
-      </main>
-      <div>
-        Icons made by
-        <a
-          href="https://www.flaticon.com/authors/icongeek26"
-          title="Icongeek26"
-        >
-          Icongeek26
-        </a>
-        from
-        <a href="https://www.flaticon.com/" title="Flaticon">
-          www.flaticon.com
-        </a>
-      </div>
+      <Header storeState={storeState} />
+      <Main />
+      <Icons />
     </>
   )
 }
+
+export default App
